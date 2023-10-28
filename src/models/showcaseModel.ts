@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const projectSchema = new mongoose.Schema(
+const showcaseSchema = new mongoose.Schema(
   {
     createdAt: {
       type: Date,
@@ -15,10 +15,6 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter a 360 video link"],
     },
-    description: {
-      type: String,
-      required: [true, "Please enter a project description"],
-    },
   },
   {
     toJSON: { virtuals: true },
@@ -26,4 +22,4 @@ const projectSchema = new mongoose.Schema(
   }
 );
 
-export const Project = mongoose.model("Project", projectSchema);
+export const Showcase = mongoose.model("Showcase", showcaseSchema);
