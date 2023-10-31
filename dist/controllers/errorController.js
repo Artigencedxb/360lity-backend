@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GlobalError = void 0;
-const sendErrorDev_1 = require("@/utils/sendErrorDev");
+const sendErrorDev_1 = require("../utils/sendErrorDev");
 const appError_1 = require("./../utils/appError");
-const sendErrorProd_1 = require("@/utils/sendErrorProd");
+const sendErrorProd_1 = require("../utils/sendErrorProd");
 const HandleValidationErrorDB = (err) => {
     const errors = Object.values(err.errors).map((el) => el.message);
     const message = `Invalid input data. ${errors.join(",")}`;

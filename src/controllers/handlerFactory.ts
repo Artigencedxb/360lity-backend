@@ -109,9 +109,20 @@ export const GetAll = (Model: Model<any>, type: string, searchKey?: string) =>
       return next(new AppError(`No current ${type} found with this id`, 404));
     }
 
+    let totalData = await Model.find().count();
+    let totalPage = Math.ceil(totalData / Number(req.query.limit));
+
     res.status(200).json({
       status: "success",
       result: doc?.length,
+      ...(req.query.page && {
+        pagination: {
+          page: Number(req.query.page),
+          totalData,
+          totalPage,
+          limit: Number(req.query.limit),
+        },
+      }),
       data: {
         [type]: doc,
       },

@@ -7,6 +7,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { GlobalError } from "./controllers/errorController";
 import projectRouter from "./routes/projectRoute";
+import blogRouter from "./routes/blogRoute";
 import showcaseRouter from "./routes/showcaseRoute";
 import uploadRouter from "./routes/uploadRoute";
 import userRouter from "./routes/userRoute";
@@ -49,6 +50,7 @@ app.get("/hi", (req, res) => {
 app.use("/api/user", userRouter);
 app.use("/api/project", projectRouter);
 app.use("/api/showcase", showcaseRouter);
+app.use("/api/blog", blogRouter);
 app.use("/api/image", uploadRouter);
 
 app.use(GlobalError);
