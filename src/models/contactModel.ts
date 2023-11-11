@@ -8,10 +8,7 @@ const contactSchema = new mongoose.Schema(
     },
 
     image: String,
-    description: {
-      type: String,
-      required: [true, "Please enter a blog description"],
-    },
+    
     phone: {
       type: String,
       required: [true, "Please enter a contact number"],

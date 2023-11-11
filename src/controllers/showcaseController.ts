@@ -13,8 +13,6 @@ export const DeleteShowcaseImage = CatchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const showcase = await Showcase.findById(req.params.id);
 
-    // if (popOptions) query = query.populate(popOptions);
-
     console.log(showcase, "show");
 
     if (showcase?.image?.length) {

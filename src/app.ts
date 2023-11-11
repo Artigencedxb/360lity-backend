@@ -11,6 +11,8 @@ import blogRouter from "./routes/blogRoute";
 import showcaseRouter from "./routes/showcaseRoute";
 import uploadRouter from "./routes/uploadRoute";
 import userRouter from "./routes/userRoute";
+import contactRouter from "./routes/contactRoute";
+import aboutRouter from "./routes/aboutRoute";
 import fileUpload from "express-fileupload";
 dotenv.config();
 export const app = express();
@@ -51,6 +53,8 @@ app.use("/api/user", userRouter);
 app.use("/api/project", projectRouter);
 app.use("/api/showcase", showcaseRouter);
 app.use("/api/blog", blogRouter);
+app.use("/api/contact", contactRouter);
+app.use("/api/about", aboutRouter);
 app.use("/api/image", uploadRouter);
 
 app.use(GlobalError);

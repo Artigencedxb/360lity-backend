@@ -19,7 +19,7 @@ export const DeleteBlogImage = CatchAsync(
 
     if (blog?.image?.length) {
       req.body.image = blog?.image;
-      req.body.folder = "blog";
+      req.body.folder = "blogs";
       req.body.imageExists = true;
     }
     next();
