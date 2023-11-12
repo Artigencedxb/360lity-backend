@@ -26,6 +26,18 @@ export const DeleteProjectImage = CatchAsync(
   }
 );
 
+// export const changeListOrder = async(req, res) => {
+//   const { id, listID, oldIndex, newIndex } = req.body;
+//   const doc = await Project.findById(id);
+
+//   let [oldValue, newValue] = [doc.lists[oldIndex], doc.lists[newIndex]];
+
+//   doc.lists.set(oldIndex, newValue);
+//   doc.lists.set(newIndex, oldValue);
+
+//   await doc.save();
+// };
+
 export const GetAllProjects = GetAll(Project, "project");
 
 export const CreateProject = CreateOne(Project, "project");
