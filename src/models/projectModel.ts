@@ -15,6 +15,7 @@ const projectSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter a 360 video link"],
     },
+    priority: { type: Number, unique: true },
     description: {
       type: String,
       required: [true, "Please enter a project description"],

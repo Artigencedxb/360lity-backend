@@ -11,7 +11,9 @@ import { app } from "./app";
 // );
 
 mongoose
-  .connect(process.env.DATABASE!)
+  .connect(process.env.DATABASE!, {
+    autoIndex: true, 
+  })
   .then(() => {
     console.log("DB connection is successfull");
   })
