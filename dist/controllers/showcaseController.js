@@ -6,7 +6,6 @@ const showcaseModel_1 = require("../models/showcaseModel");
 const handlerFactory_1 = require("./handlerFactory");
 exports.DeleteShowcaseImage = (0, catchAsync_1.CatchAsync)(async (req, res, next) => {
     const showcase = await showcaseModel_1.Showcase.findById(req.params.id);
-    // if (popOptions) query = query.populate(popOptions);
     console.log(showcase, "show");
     if (showcase?.image?.length) {
         req.body.image = showcase?.image;

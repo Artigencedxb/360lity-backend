@@ -12,12 +12,17 @@ const showcaseSchema = new mongoose_1.default.Schema({
     },
     name: {
         type: String,
-        required: [true, "Please enter a project name"],
+        required: [true, "Please enter a showcase name"],
     },
     image: String,
     link: {
         type: String,
         required: [true, "Please enter a 360 video link"],
+    },
+    priority: { type: Number, unique: true },
+    description: {
+        type: String,
+        required: [true, "Please enter a showcase description"],
     },
 }, {
     toJSON: { virtuals: true },

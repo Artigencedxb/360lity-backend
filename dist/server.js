@@ -14,7 +14,9 @@ const app_1 = require("./app");
 //   process.env.MONGO_PASSWORD as any
 // );
 mongoose_1.default
-    .connect(process.env.DATABASE)
+    .connect(process.env.DATABASE, {
+    autoIndex: true,
+})
     .then(() => {
     console.log("DB connection is successfull");
 })

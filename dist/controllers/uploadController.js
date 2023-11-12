@@ -23,6 +23,9 @@ exports.uploadImage = (0, catchAsync_1.CatchAsync)(async (req, res, next) => {
     });
 });
 exports.deleteImage = (0, catchAsync_1.CatchAsync)(async (req, res, next) => {
+    if (!req.body.image) {
+        return next();
+    }
     const imagePath = req.body.image.split("/").slice(-1);
     const publicId = imagePath[0].split(".")?.[0];
     const folder = req.body.folder;

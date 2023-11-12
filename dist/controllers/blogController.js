@@ -10,7 +10,7 @@ exports.DeleteBlogImage = (0, catchAsync_1.CatchAsync)(async (req, res, next) =>
     console.log(blog, "show");
     if (blog?.image?.length) {
         req.body.image = blog?.image;
-        req.body.folder = "blog";
+        req.body.folder = "blogs";
         req.body.imageExists = true;
     }
     next();

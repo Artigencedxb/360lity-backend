@@ -15,6 +15,14 @@ exports.DeleteProjectImage = (0, catchAsync_1.CatchAsync)(async (req, res, next)
     }
     next();
 });
+// export const changeListOrder = async(req, res) => {
+//   const { id, listID, oldIndex, newIndex } = req.body;
+//   const doc = await Project.findById(id);
+//   let [oldValue, newValue] = [doc.lists[oldIndex], doc.lists[newIndex]];
+//   doc.lists.set(oldIndex, newValue);
+//   doc.lists.set(newIndex, oldValue);
+//   await doc.save();
+// };
 exports.GetAllProjects = (0, handlerFactory_1.GetAll)(projectModel_1.Project, "project");
 exports.CreateProject = (0, handlerFactory_1.CreateOne)(projectModel_1.Project, "project");
 exports.EditProject = (0, handlerFactory_1.UpdateOne)(projectModel_1.Project, "project");
