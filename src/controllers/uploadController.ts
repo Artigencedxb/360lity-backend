@@ -28,6 +28,9 @@ export const uploadImage = CatchAsync(
 
 export const deleteImage = CatchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
+    if(!req.body.image) {
+      return next()
+    }
     const imagePath = req.body.image.split("/").slice(-1);
     const publicId = imagePath[0].split(".")?.[0];
 
