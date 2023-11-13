@@ -17,6 +17,10 @@ const contactSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter a whatsapp number"],
     },
+    description: {
+      type: String,
+      required: [true, "Please enter a contact description"],
+    },
     email: {
       type: String,
       required: [true, "Please enter a email address"],
