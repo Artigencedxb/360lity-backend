@@ -19,7 +19,7 @@ const showcaseSchema = new mongoose_1.default.Schema({
         type: String,
         required: [true, "Please enter a 360 video link"],
     },
-    priority: { type: Number, unique: true },
+    priority: { type: Number },
     description: {
         type: String,
         required: [true, "Please enter a showcase description"],
