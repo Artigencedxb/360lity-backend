@@ -19,6 +19,7 @@ const uploadRoute_1 = __importDefault(require("./routes/uploadRoute"));
 const userRoute_1 = __importDefault(require("./routes/userRoute"));
 const contactRoute_1 = __importDefault(require("./routes/contactRoute"));
 const aboutRoute_1 = __importDefault(require("./routes/aboutRoute"));
+const xvtRoute_1 = __importDefault(require("./routes/xvtRoute"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
 dotenv_1.default.config();
 exports.app = (0, express_1.default)();
@@ -51,6 +52,7 @@ exports.app.use("/api/showcase", showcaseRoute_1.default);
 exports.app.use("/api/blog", blogRoute_1.default);
 exports.app.use("/api/contact", contactRoute_1.default);
 exports.app.use("/api/about", aboutRoute_1.default);
+exports.app.use("/api/xvt", xvtRoute_1.default);
 exports.app.use("/api/image", uploadRoute_1.default);
 exports.app.use(errorController_1.GlobalError);
 //# sourceMappingURL=app.js.map

@@ -38,6 +38,7 @@ const UpdateOne = (Model, type) => (0, catchAsync_1.CatchAsync)(async (req, res,
 exports.UpdateOne = UpdateOne;
 const CreateOne = (Model, type, popOptions) => (0, catchAsync_1.CatchAsync)(async (req, res, next) => {
     let doc = await Model.create(req.body);
+    console.log(req.body, "body");
     if (popOptions)
         doc = await doc.populate(popOptions);
     // doc.populate("size category");

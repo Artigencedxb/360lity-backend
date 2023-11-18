@@ -50,6 +50,8 @@ export const CreateOne = (
 ) =>
   CatchAsync(async (req: Request, res: Response, next: NextFunction) => {
     let doc = await Model.create(req.body);
+    console.log(req.body, "body");
+    
     if (popOptions) doc = await doc.populate(popOptions);
     // doc.populate("size category");
     // if (!doc) {
