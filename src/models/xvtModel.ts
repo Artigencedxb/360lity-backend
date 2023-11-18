@@ -11,6 +11,12 @@ const xvtSchema = new mongoose.Schema(
       required: [true, "Please enter a xvt name"],
     },
     image: String,
+    descImage1: String,
+    descImage2: String,
+    description: {
+      type: String,
+      required: [true, "Please enter a blog description"],
+    },
   },
   {
     toJSON: { virtuals: true },
