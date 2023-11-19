@@ -1,3 +1,4 @@
+import { protectRoute, restrictTo } from "../controllers/authController";
 import {
   CreateAbout,
   DeleteAbout,
@@ -16,7 +17,13 @@ router.route("/").get(GetAllAbout).post(CreateAbout);
 router
   .route("/:id")
   .get(GetAbout)
-  .patch(EditAbout)
-  .delete(DeleteAboutImage, deleteImage, DeleteAbout);
+  .patch(protectRoute, restrictTo("admin"), EditAbout)
+  .delete(
+    protectRoute,
+    restrictTo("admin"),
+    DeleteAboutImage,
+    deleteImage,
+    DeleteAbout
+  );
 
 export default router;

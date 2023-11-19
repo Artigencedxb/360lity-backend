@@ -14,6 +14,7 @@ import userRouter from "./routes/userRoute";
 import contactRouter from "./routes/contactRoute";
 import aboutRouter from "./routes/aboutRoute";
 import xvtRouter from "./routes/xvtRoute";
+import arVrRouter from "./routes/arVrRoute";
 import fileUpload from "express-fileupload";
 dotenv.config();
 export const app = express();
@@ -57,6 +58,7 @@ app.use("/api/blog", blogRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/about", aboutRouter);
 app.use("/api/xvt", xvtRouter);
+app.use("/api/arvr", arVrRouter);
 app.use("/api/image", uploadRouter);
 
 app.use(GlobalError);
