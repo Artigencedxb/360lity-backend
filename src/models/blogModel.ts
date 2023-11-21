@@ -10,7 +10,7 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter a blog title"],
     },
-    priority: { type: Number, unique: true },
+    priority: { type: Number},
     image: String,
     description: {
       type: String,
