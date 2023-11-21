@@ -12,7 +12,7 @@ router.post("/", contactController_1.CreateContact);
 router
     .route("/:id")
     .get(contactController_1.GetContact)
-    .patch(contactController_1.EditContact)
+    .patch(authController_1.protectRoute, (0, authController_1.restrictTo)("admin"), contactController_1.EditContact)
     .delete(authController_1.protectRoute, contactController_1.DeleteContactImage, uploadController_1.deleteImage, contactController_1.DeleteContact);
 exports.default = router;
 //# sourceMappingURL=contactRoute.js.map

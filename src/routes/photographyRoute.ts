@@ -5,12 +5,14 @@ import {
   DeletePhotographyImage,
   EditPhotography,
   GetPhotography,
+  GetAllPhotography
 } from "../controllers/photographyController";
 import express from "express";
 import { protectRoute, restrictTo } from "../controllers/authController";
 const router = express.Router();
 
 router.post("/", protectRoute, restrictTo("admin"), CreatePhotography);
+router.get("/",  GetAllPhotography);
 router
   .route("/:id")
   .get(GetPhotography)
