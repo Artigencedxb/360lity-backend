@@ -11,13 +11,15 @@ const arvrSchema = new mongoose_1.default.Schema({
         default: Date.now(),
     },
     image: String,
+    descImage1: String,
+    descImage2: String,
+    description: {
+        type: String,
+        required: [true, "Please enter a blog description"],
+    },
     title: {
         type: String,
         required: [true, "Please enter a title"],
-    },
-    description: {
-        type: String,
-        required: [true, "Please enter a ArVr description"],
     },
 }, {
     toJSON: { virtuals: true },
