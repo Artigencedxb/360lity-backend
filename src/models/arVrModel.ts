@@ -9,9 +9,13 @@ const arvrSchema = new mongoose.Schema(
     image: String,
     descImage1: String,
     descImage2: String,
-    description: {
+    description1: {
       type: String,
-      required: [true, "Please enter a blog description"],
+      required: [true, "Please enter first paragraph description"],
+    },
+    description2: {
+      type: String,
+      required: [true, "Please enter second paragraph description"],
     },
 
     title: {
